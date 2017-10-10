@@ -1,0 +1,40 @@
+{
+  "source": {
+    "include": [ "src/" ],
+    "includePattern": ".js$"
+  },
+  "opts": {
+    "destination": "docs/api",
+    "readme": "docs/index.md",
+    "template": "node_modules/tui-jsdoc-template",
+    "package": "package.json",
+    "recurse": true,
+    "tutorials": "docs/guides",
+    "encoding": "utf8"
+  },
+  "templates": {
+    "default": {
+      "staticFiles": {
+        "include": ["build/docs/"]
+      }
+    },
+    "logo": {
+      "url": "logo.png",
+      "height": "200px",
+      "width": "200px"
+    },
+    "name": "jz-utils.js Documentation",
+    "tabNames": {
+      "tutorials": "Guides"
+    },
+    "footerText": "<span class='copyright'><a href='http://daojia.com'>daojia.com</a> , Inc</a></span>",
+    "css": [
+      "styles/index.css"
+    ]
+  },
+  "plugins": ["plugins/markdown"],
+  "markdown": {
+    "tags": ["example"],
+    "idInHeadings": true
+  }
+}
