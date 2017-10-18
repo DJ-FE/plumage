@@ -1,6 +1,7 @@
 /**
  * Created by zhengzk on 2017/4/21.
  */
+
 var userAgent = (window.navigator && window.navigator.userAgent) || ''
 userAgent = userAgent.toLowerCase()
 var isIPad = (/iPad/i).test(userAgent)

@@ -1,6 +1,10 @@
 /**
+ * cookie操作相关方法
+ *
  * Created by zhengzk on 2017/10/1.
- * https://github.com/js-cookie/js-cookie/blob/master/src/js.cookie.js
+ *
+ * {@link https://github.com/js-cookie/js-cookie/blob/master/src/js.cookie.js}
+ * @module cookie
  */
 /*
 var defaults = {

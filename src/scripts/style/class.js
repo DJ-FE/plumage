@@ -5,7 +5,7 @@
  * @param cls
  * @returns {Array|{index: number, input: string}}
  */
-function has(obj, cls) {
+function hasClass(obj, cls) {
     return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 }
 
@@ -14,7 +14,7 @@ function has(obj, cls) {
  * @param obj
  * @param cls
  */
-function add(obj, cls) {
+function addClass(obj, cls) {
     if (!this.hasClass(obj, cls)) obj.className += " " + cls;
 }
 
@@ -23,7 +23,7 @@ function add(obj, cls) {
  * @param obj
  * @param cls
  */
-function remove(obj, cls) {
+function removeClass(obj, cls) {
     if (this.hasClass(obj, cls)) {
         var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
         obj.className = obj.className.replace(reg, ' ');
@@ -36,7 +36,7 @@ function remove(obj, cls) {
  * @param obj
  * @param cls
  */
-function toggle(obj, cls){
+function toggleClass(obj, cls){
     if(has(obj, cls)){
         remove(obj, cls)
     }else{
@@ -44,9 +44,9 @@ function toggle(obj, cls){
     }
 }
 
-export default{
-    has,
-    add,
-    remove,
-    toggle
+export default {
+    hasClass,
+    addClass,
+    removeClass,
+    toggleClass
 }

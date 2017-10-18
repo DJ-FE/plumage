@@ -1,5 +1,8 @@
 /**
+ * hash相关字段解析
+ *
  * Created by zhengzk on 2017/9/11.
+ * @module hash
  */
 
 import tool from './base/tool'

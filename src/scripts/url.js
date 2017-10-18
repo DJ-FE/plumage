@@ -1,6 +1,9 @@
 /**
+ * URL相关解析
  * Created by zhengzk on 2017/9/11.
+ * @module url
  */
+ 
 import tool from './base/tool'
 /**
  * 获取浏览器url参数

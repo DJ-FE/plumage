@@ -1,4 +1,6 @@
 /**
+ * storage封装(支持Object存取)
+ *
  * Created by zhengzk on 2017/3/31.
  */
 
@@ -6,6 +8,7 @@ import utils from './base/base'
 
 /**
  * 判断storage是否可用
+ * @private
  * @param storage
  * @returns {boolean}
  */
@@ -22,8 +25,10 @@ function storageSupported (storage = window.sessionStorage) {
 
 /**
  * 转换storage
+ * @generator
+ * @private
  * @param storage
- * @returns {set: set, get: get, remove: remove}
+ * @returns {{set: set, get: get, remove: remove}}
  */
 function storageParser (storage) {
     var supported = storageSupported(storage)
@@ -31,8 +36,11 @@ function storageParser (storage) {
         // throw new Error(storage + 'not supported')
         console.error(storage + 'not supported')
     }
-
-    return {
+  
+  /**
+   * @module storage
+   */
+  return {
         /**
          * 存储数据
          * @param key
@@ -81,7 +89,16 @@ function storageParser (storage) {
     }
 }
 
+/**
+ * {@link storage#set}
+ *  @global
+ */
 let sessionStorage = storageParser(window.sessionStorage)
+
+/**
+ * {@link Storage#set}
+ * @global
+ */
 let localStorage = storageParser(window.localStorage)
 
 export default {

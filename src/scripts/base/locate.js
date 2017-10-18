@@ -27,6 +27,6 @@ function getLocation (options = {}) {
   })
 }
 
-export {
+export default {
   getLocation
 }

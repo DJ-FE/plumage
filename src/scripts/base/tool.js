@@ -1,5 +1,7 @@
 /**
+ * 基础工具方法
  * Created by zhengzk on 2017/9/11.
+ * @module url
  */
 
 /**

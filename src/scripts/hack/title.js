@@ -1,4 +1,8 @@
-export default{
+export default {
+  /**
+   * 设置页面title
+   * @param title
+   */
   setPageTitle (title) {
     document.title = title;
     var i = document.createElement('iframe');
