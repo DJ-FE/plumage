@@ -13,7 +13,7 @@ module.exports = {
  'rules': {
    "indent": [
      "error",
-     4
+     2
    ],
    // allow paren-less arrow functions
    'arrow-parens': 0,

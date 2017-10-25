@@ -1,4 +1,3 @@
-
 var hasOwnProp = Object.prototype.hasOwnProperty
 
 /**
@@ -6,7 +5,7 @@ var hasOwnProp = Object.prototype.hasOwnProperty
  * @param {Array} arr
  */
 function isArray (arr) {
-    return Object.prototype.toString.apply(arr) === '[object Array]'
+  return Object.prototype.toString.apply(arr) === '[object Array]'
 }
 
 /**
@@ -15,7 +14,7 @@ function isArray (arr) {
  * @returns {boolean|*}
  */
 function isArrayLike (obj) {
-    return isArray(obj) || (!isFunction(obj) && (obj.length === 0 || ((typeof obj.length === 'number') && (obj.length > 0) && ((obj.length - 1) in obj))))
+  return isArray(obj) || (!isFunction(obj) && (obj.length === 0 || ((typeof obj.length === 'number') && (obj.length > 0) && ((obj.length - 1) in obj))))
 }
 
 /**
@@ -23,7 +22,7 @@ function isArrayLike (obj) {
  * @param {Object} obj
  */
 function isObject (obj) {
-    return Object.prototype.toString.apply(obj) === '[object Object]'
+  return Object.prototype.toString.apply(obj) === '[object Object]'
 }
 
 /**
@@ -32,7 +31,7 @@ function isObject (obj) {
  * @returns {boolean}
  */
 function isFunction (fn) {
-    return Object.prototype.toString.call(fn) === '[object Function]'
+  return Object.prototype.toString.call(fn) === '[object Function]'
 }
 
 /**
@@ -41,10 +40,10 @@ function isFunction (fn) {
  * @returns {boolean}
  */
 function isPlainObject (obj) {
-    return !!obj &&
-      typeof obj === 'object' &&
-      obj.toString() === '[object Object]' &&
-      obj.constructor === Object
+  return !!obj &&
+    typeof obj === 'object' &&
+    obj.toString() === '[object Object]' &&
+    obj.constructor === Object
 }
 
 /**
@@ -53,11 +52,11 @@ function isPlainObject (obj) {
  * @returns {boolean}
  */
 function isEmptyObject (e) {
-    var t
-    for (t in e) {
-        return false
-    }
-    return true
+  var t
+  for (t in e) {
+    return false
+  }
+  return true
 }
 
 /**
@@ -66,8 +65,8 @@ function isEmptyObject (e) {
  * @returns {string}
  */
 function trim (text) {
-    var reg = /(^\s*)|(\s*$)/g
-    return text == null ? '' : (text + '').replace(reg, '')
+  var reg = /(^\s*)|(\s*$)/g
+  return text == null ? '' : (text + '').replace(reg, '')
 }
 
 /**
@@ -82,15 +81,15 @@ function noop () {
  * @returns {*}
  */
 function merge (first, second) {
-    if (!second) {
-        return first
-    }
-    for (var key in second) {
-        if (hasOwnProp.call(second, key)) {
-            first[key] = second[key]
-        }
-    }
+  if (!second) {
     return first
+  }
+  for (var key in second) {
+    if (hasOwnProp.call(second, key)) {
+      first[key] = second[key]
+    }
+  }
+  return first
 }
 
 /**
@@ -100,23 +99,23 @@ function merge (first, second) {
  * @param context
  */
 function each (obj, fn, context) {
-    for (var key in obj) {
-        if (hasOwnProp.call(obj, key)) {
-            // inx,element
-            fn.call(context || this, key, obj[key])
-        }
+  for (var key in obj) {
+    if (hasOwnProp.call(obj, key)) {
+      // inx,element
+      fn.call(context || this, key, obj[key])
     }
+  }
 }
 
 export default {
-    trim,
-    merge,
-    each,
-    noop,
-    isFunction,
-    isArray,
-    isArrayLike,
-    isObject,
-    isPlainObject,
-    isEmptyObject
+  trim,
+  merge,
+  each,
+  noop,
+  isFunction,
+  isArray,
+  isArrayLike,
+  isObject,
+  isPlainObject,
+  isEmptyObject
 }

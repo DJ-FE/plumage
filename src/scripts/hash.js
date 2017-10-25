@@ -13,11 +13,11 @@ import tool from './base/tool'
  * @returns {*}
  */
 function param (key) {
-    var args = param.parse(window.location.hash)
-    if (key in args) {
-        return args[key]
-    }
-    return args
+  var args = param.parse(window.location.hash)
+  if (key in args) {
+    return args[key]
+  }
+  return args
 }
 
 /**
@@ -25,8 +25,8 @@ function param (key) {
  * @returns {string}
  */
 function path () {
-    var path = (window.location.hash || '').split('?')[0] || ''
-    return path.substring(path.indexOf('/'))
+  var path = (window.location.hash || '').split('?')[0] || ''
+  return path.substring(path.indexOf('/'))
 }
 
 /**
@@ -34,8 +34,8 @@ function path () {
  * @returns {*}
  */
 function search () {
-    var search = (window.location.hash || '').split('?')[1] || ''
-    return search ? '?' + search : search
+  var search = (window.location.hash || '').split('?')[1] || ''
+  return search ? '?' + search : search
 }
 
 /**
@@ -43,7 +43,7 @@ function search () {
  * @param hash
  */
 function change (hash) {
-    window.location.hash = hash
+  window.location.hash = hash
 }
 
 /**
@@ -51,9 +51,9 @@ function change (hash) {
  * @param args
  */
 function add (args) {
-    var hash = window.location.hash || ''
-    var params = tool.parse(hash)
-    change((hash.split('?')[0] || '') + '?' + tool.transform(Object.assign(params, args)))
+  var hash = window.location.hash || ''
+  var params = tool.parse(hash)
+  change((hash.split('?')[0] || '') + '?' + tool.transform(Object.assign(params, args)))
 }
 
 /**
@@ -61,18 +61,18 @@ function add (args) {
  * @param key
  */
 function remove (key) {
-    var hash = window.location.hash || ''
-    var params = tool.parse(hash)
-    delete params[key]
-    var search = tool.transform(params)
-    search = search ? '?' + search : search
-    change((hash.split('?')[0] || '') + search)
+  var hash = window.location.hash || ''
+  var params = tool.parse(hash)
+  delete params[key]
+  var search = tool.transform(params)
+  search = search ? '?' + search : search
+  change((hash.split('?')[0] || '') + search)
 }
 
 export default {
-    param,
-    path,
-    search,
-    add,
-    remove
+  param,
+  path,
+  search,
+  add,
+  remove
 }

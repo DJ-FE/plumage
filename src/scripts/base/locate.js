@@ -17,7 +17,7 @@ function getLocation (options = {}) {
       }
       reject(err)
     }
-
+    
     // 获取当前位置
     navigator.geolocation.getCurrentPosition(position => {
       resolve(position)

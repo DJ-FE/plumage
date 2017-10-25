@@ -13,5 +13,23 @@ import url from './url'
 import hash from './hash'
 import cookie from './cookie'
 
+var _plumage = window['__NAME__']
+
 // export default { url, hash, ...base, ...browser, ...load }
-export default Object.assign({url, hash, cookie}, base, browser, clazz, load, storage, locate, title)
+export default Object.assign({
+  version: '__VERSION__',
+  /**
+   * 释放并返回plumage 解决命名冲突
+   * @param flag
+   * @returns {Function}
+   */
+  noConflict: function () {
+    if (window['__NAME__'] === _plumage) {
+      window['__NAME__'] = _plumage
+    }
+    return _plumage
+  },
+  url,
+  hash,
+  cookie
+}, base, browser, clazz, load, storage, locate, title)

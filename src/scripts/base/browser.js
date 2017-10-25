@@ -12,10 +12,10 @@ var isAndroid = (/Android/i).test(userAgent)
 var isWechat = (/micromessenger/.test(userAgent))
 
 export default {
-    isIPod: isIPod,
-    isIPad: isIPad,
-    isIOS: isIOS,
-    isIPhone: isIPhone,
-    isAndroid: isAndroid,
-    isWechat: isWechat
+  isIPod: isIPod,
+  isIPad: isIPad,
+  isIOS: isIOS,
+  isIPhone: isIPhone,
+  isAndroid: isAndroid,
+  isWechat: isWechat
 }
