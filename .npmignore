@@ -1,1 +1,9 @@
 node_modules
+build
+test
+src
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.jsdoc.json

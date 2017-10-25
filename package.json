@@ -2,9 +2,9 @@
   "name": "plumage",
   "version": "0.0.1",
   "description": "plumage",
-  "main": "dist/js/index.js",
+  "main": "dist/js/plumage.js",
   "directories": {
-    "doc": "doc"
+    "docs": "docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
